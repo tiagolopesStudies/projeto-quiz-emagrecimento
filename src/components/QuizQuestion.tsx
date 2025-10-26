@@ -94,7 +94,7 @@ export const QuizQuestion = ({
                   className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-200 ${
                     selectedOption === option.value
                       ? "border-primary bg-primary/5 shadow-md"
-                      : "border-border hover:border-primary/50 hover:bg-accent/50"
+                      : "border-border hover:border-primary/30 hover:bg-primary/5"
                   }`}
                 >
                   <span className="font-medium text-foreground">{option.label}</span>
