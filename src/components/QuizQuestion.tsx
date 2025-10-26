@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -34,6 +34,11 @@ export const QuizQuestion = ({
   onEmailDataChange,
 }: QuizQuestionProps) => {
   const [selectedOption, setSelectedOption] = useState<string | undefined>(currentAnswer);
+
+  // Sincronizar selectedOption quando a pergunta mudar
+  useEffect(() => {
+    setSelectedOption(currentAnswer);
+  }, [question.key, currentAnswer]);
 
   const handleOptionSelect = (value: string) => {
     setSelectedOption(value);
