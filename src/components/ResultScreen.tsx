@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { QuizAnswers } from "@/types/quiz";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { CheckCircle2, Clock, Salad, TrendingDown } from "lucide-react";
+import { CheckCircle2, Clock, Salad, TrendingUp } from "lucide-react";
 
 interface ResultScreenProps {
   answers: QuizAnswers;
@@ -10,12 +10,12 @@ interface ResultScreenProps {
 
 const chartData = [
   { day: 0, weight: 0 },
-  { day: 3, weight: -1.5 },
-  { day: 6, weight: -2.8 },
-  { day: 9, weight: -4.2 },
-  { day: 12, weight: -5.5 },
-  { day: 15, weight: -7.0 },
-  { day: 18, weight: -9.5 },
+  { day: 3, weight: 1.5 },
+  { day: 6, weight: 2.8 },
+  { day: 9, weight: 4.2 },
+  { day: 12, weight: 5.5 },
+  { day: 15, weight: 7.0 },
+  { day: 18, weight: 9.5 },
 ];
 
 const goalLabels: Record<string, string> = {
@@ -77,7 +77,7 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
                       stroke="hsl(var(--muted-foreground))"
                     />
                     <YAxis
-                      label={{ value: "Kg perdidos (referência)", angle: -90, position: "insideLeft" }}
+                      label={{ value: "Evolução (referência)", angle: -90, position: "insideLeft" }}
                       stroke="hsl(var(--muted-foreground))"
                     />
                     <Tooltip
@@ -86,7 +86,7 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
                         border: "1px solid hsl(var(--border))",
                         borderRadius: "8px",
                       }}
-                      formatter={(value: number) => [`${Math.abs(value)} kg`, "Perda estimada"]}
+                      formatter={(value: number) => [`${value} kg`, "Progresso"]}
                       labelFormatter={(day) => `Dia ${day}`}
                     />
                     <Line
@@ -130,7 +130,7 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
 
             <Card className="p-6 text-center space-y-4 shadow-card hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
-                <TrendingDown className="w-8 h-8 text-primary" />
+                <TrendingUp className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-bold text-lg text-foreground">Acompanhamento</h3>
               <p className="text-muted-foreground">
