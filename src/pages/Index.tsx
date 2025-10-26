@@ -4,6 +4,7 @@ import { QuizQuestion } from "@/components/QuizQuestion";
 import { AnalyzingScreen } from "@/components/AnalyzingScreen";
 import { ResultScreen } from "@/components/ResultScreen";
 import { QUIZ_QUESTIONS, QuizAnswers } from "@/types/quiz";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 type Screen = "start" | "quiz" | "analyzing" | "result";
 
@@ -48,7 +49,12 @@ const Index = () => {
   };
 
   if (screen === "start") {
-    return <StartScreen onStart={handleStart} />;
+    return (
+      <>
+        <ThemeToggle />
+        <StartScreen onStart={handleStart} />
+      </>
+    );
   }
 
   if (screen === "quiz") {
@@ -56,26 +62,39 @@ const Index = () => {
     const isLastQuestion = currentQuestion === QUIZ_QUESTIONS.length - 1;
 
     return (
-      <QuizQuestion
-        question={question}
-        onAnswer={handleAnswer}
-        onBack={handleBack}
-        onNext={handleNext}
-        currentAnswer={answers[question.key] as string}
-        currentStep={currentQuestion + 1}
-        totalSteps={QUIZ_QUESTIONS.length}
-        showEmailCapture={isLastQuestion}
-        emailData={emailData}
-        onEmailDataChange={setEmailData}
-      />
+      <>
+        <ThemeToggle />
+        <QuizQuestion
+          question={question}
+          onAnswer={handleAnswer}
+          onBack={handleBack}
+          onNext={handleNext}
+          currentAnswer={answers[question.key] as string}
+          currentStep={currentQuestion + 1}
+          totalSteps={QUIZ_QUESTIONS.length}
+          showEmailCapture={isLastQuestion}
+          emailData={emailData}
+          onEmailDataChange={setEmailData}
+        />
+      </>
     );
   }
 
   if (screen === "analyzing") {
-    return <AnalyzingScreen onComplete={handleAnalyzingComplete} />;
+    return (
+      <>
+        <ThemeToggle />
+        <AnalyzingScreen onComplete={handleAnalyzingComplete} />
+      </>
+    );
   }
 
-  return <ResultScreen answers={answers} />;
+  return (
+    <>
+      <ThemeToggle />
+      <ResultScreen answers={answers} />
+    </>
+  );
 };
 
 export default Index;
