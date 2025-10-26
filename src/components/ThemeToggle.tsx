@@ -16,7 +16,7 @@ export function ThemeToggle() {
       <Button
         variant="outline"
         size="icon"
-        className="fixed top-4 right-4 z-50 rounded-full"
+        className="fixed bottom-4 right-4 z-50 rounded-full"
       >
         <Sun className="h-5 w-5" />
       </Button>
@@ -28,7 +28,7 @@ export function ThemeToggle() {
       variant="outline"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="fixed top-4 right-4 z-50 rounded-full"
+      className="fixed bottom-4 right-4 z-50 rounded-full"
     >
       {theme === "dark" ? (
         <Sun className="h-5 w-5" />

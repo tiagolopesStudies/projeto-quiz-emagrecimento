@@ -153,11 +153,13 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
             <Button
               variant="cta"
               size="xl"
-              className="mx-auto"
+              className="mx-auto w-full sm:w-auto text-sm sm:text-base px-4 sm:px-8"
               onClick={() => console.log("CTA clicked")}
             >
-              <CheckCircle2 className="w-5 h-5 mr-2" />
-              Quero meu Plano Personalizado — Garantia 7 dias
+              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              <span className="whitespace-normal sm:whitespace-nowrap">
+                Quero meu Plano Personalizado — Garantia 7 dias
+              </span>
             </Button>
 
             <p className="text-sm text-muted-foreground">
