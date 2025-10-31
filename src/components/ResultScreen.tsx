@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { QuizAnswers } from "@/types/quiz";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { CheckCircle2, Clock, Salad, TrendingUp } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface ResultScreenProps {
   answers: QuizAnswers;
@@ -40,6 +41,7 @@ const availabilityLabels: Record<string, string> = {
 };
 
 export const ResultScreen = ({ answers }: ResultScreenProps) => {
+  const navigate = useNavigate();
   const goal = goalLabels[answers.main_goal || ""] || "transformar seu corpo";
   const level = levelLabels[answers.fitness_level || ""] || "seu nível";
   const availability = availabilityLabels[answers.daily_availability || ""] || "seu tempo disponível";
@@ -154,7 +156,7 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
               variant="cta"
               size="xl"
               className="mx-auto w-full sm:w-auto text-sm sm:text-base px-4 sm:px-8"
-              onClick={() => console.log("CTA clicked")}
+              onClick={() => navigate("/venda")}
             >
               <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               <span className="whitespace-normal sm:whitespace-nowrap">
