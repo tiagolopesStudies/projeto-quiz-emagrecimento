@@ -27,7 +27,7 @@ export const StartScreen = ({ onStart }: StartScreenProps) => {
               Descubra seu Plano Personalizado
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Responda 12 perguntas rápidas — levando menos de 2 minutos — e receba seu plano personalizado do Desafio Corpo Definido em 18 Dias.
+              Faça uma avaliação gratuita e descubra como perder até 10kg em 21 dias acelerando o seu metabolismo e queimando gordura de forma contínua — sem dietas malucas!
             </p>
             
             <div className="flex items-center justify-center gap-2 text-muted-foreground">

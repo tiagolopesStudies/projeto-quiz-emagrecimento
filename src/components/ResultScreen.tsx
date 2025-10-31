@@ -156,17 +156,13 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
               variant="cta"
               size="xl"
               className="mx-auto w-full sm:w-auto text-sm sm:text-base px-4 sm:px-8"
-              onClick={() => navigate("/venda")}
+              onClick={() => navigate("/sale")}
             >
               <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               <span className="whitespace-normal sm:whitespace-nowrap">
-                Quero meu Plano Personalizado — Garantia 7 dias
+                Quero meu Plano Personalizado
               </span>
             </Button>
-
-            <p className="text-sm text-muted-foreground">
-              Sem riscos — cancele em até 7 dias
-            </p>
           </Card>
         </div>
       </div>

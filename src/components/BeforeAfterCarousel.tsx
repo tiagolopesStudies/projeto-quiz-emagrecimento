@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import transformation1 from "@/assets/transformation-1.jpg";
-import transformation2 from "@/assets/transformation-2.jpg";
+import transformation1 from "@/assets/transformation-1.webp";
+import transformation2 from "@/assets/transformation-2.png";
 import transformation3 from "@/assets/transformation-3.jpg";
 import transformation4 from "@/assets/transformation-4.jpg";
 
