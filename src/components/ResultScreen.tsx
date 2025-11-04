@@ -11,12 +11,13 @@ interface ResultScreenProps {
 
 const chartData = [
   { day: 0, weight: 0 },
-  { day: 3, weight: 1.5 },
-  { day: 6, weight: 2.8 },
-  { day: 9, weight: 4.2 },
-  { day: 12, weight: 5.5 },
-  { day: 15, weight: 7.0 },
-  { day: 18, weight: 9.5 },
+  { day: 5, weight: 1.5 },
+  { day: 8, weight: 2.8 },
+  { day: 10, weight: 4.2 },
+  { day: 14, weight: 5.5 },
+  { day: 17, weight: 7.0 },
+  { day: 21, weight: 8.5 },
+  { day: 25, weight: 10.0 },
 ];
 
 const goalLabels: Record<string, string> = {
@@ -53,7 +54,7 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
           {/* Header */}
           <div className="text-center space-y-4">
             <h1 className="text-3xl md:text-5xl font-bold text-foreground">
-              Seu Plano Ideal para o Desafio Corpo Definido em 18 Dias
+              Seu Plano Ideal para o Desafio Corpo Definido em 25 Dias
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Com base nas suas respostas, montamos um plano com foco em{" "}
@@ -67,7 +68,7 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
           <Card className="p-6 md:p-8 shadow-card">
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-foreground">
-                Projeção de Evolução em 18 Dias
+                Projeção de Evolução em 25 Dias
               </h2>
               <div className="h-80">
                 <ResponsiveContainer width="100%" height="100%">
@@ -79,7 +80,7 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
                       stroke="hsl(var(--muted-foreground))"
                     />
                     <YAxis
-                      label={{ value: "Evolução (referência)", angle: -90, position: "insideLeft" }}
+                      label={{ value: "Quilos queimados", angle: -90, position: "insideLeft" }}
                       stroke="hsl(var(--muted-foreground))"
                     />
                     <Tooltip
@@ -103,7 +104,7 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
                 </ResponsiveContainer>
               </div>
               <p className="text-sm text-muted-foreground text-center">
-                Projeção média para o Desafio Corpo Definido em 18 Dias. Resultados individuais variam.
+                Projeção média para o Desafio Corpo Definido em 25 Dias. Resultados individuais variam.
               </p>
             </div>
           </Card>
@@ -116,7 +117,7 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
               </div>
               <h3 className="font-bold text-lg text-foreground">Treinos Curtos</h3>
               <p className="text-muted-foreground">
-                20–35 min — feitos para encaixar na rotina
+                20-35 min — feitos para encaixar na rotina
               </p>
             </Card>
 
@@ -148,7 +149,7 @@ export const ResultScreen = ({ answers }: ResultScreenProps) => {
                 Pronto para começar sua transformação?
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Seu plano personalizado está pronto. Comece hoje e veja resultados em 18 dias.
+                Seu plano personalizado está pronto. Comece hoje e veja resultados em semanas!
               </p>
             </div>
 

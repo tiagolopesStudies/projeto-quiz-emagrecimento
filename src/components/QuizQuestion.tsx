@@ -4,8 +4,6 @@ import { Card } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Question } from "@/types/quiz";
 import { ProgressBar } from "./ProgressBar";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
 interface QuizQuestionProps {
@@ -16,7 +14,6 @@ interface QuizQuestionProps {
   currentAnswer?: string;
   currentStep: number;
   totalSteps: number;
-  showEmailCapture?: boolean;
   emailData?: { name?: string; email?: string };
   onEmailDataChange?: (data: { name?: string; email?: string }) => void;
 }
@@ -29,9 +26,6 @@ export const QuizQuestion = ({
   currentAnswer,
   currentStep,
   totalSteps,
-  showEmailCapture,
-  emailData,
-  onEmailDataChange,
 }: QuizQuestionProps) => {
   const [selectedOption, setSelectedOption] = useState<string | undefined>(currentAnswer);
 
@@ -50,24 +44,6 @@ export const QuizQuestion = ({
       toast.error("Responda para continuar");
       return;
     }
-    onNext();
-  };
-
-  const validateEmail = (email: string) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  };
-
-  const handleEmailSubmit = () => {
-    if (!selectedOption) {
-      toast.error("Responda para continuar");
-      return;
-    }
-    
-    if (emailData?.email && !validateEmail(emailData.email)) {
-      toast.error("Digite um e-mail válido — usaremos só para enviar seu plano.");
-      return;
-    }
-    
     onNext();
   };
 
@@ -107,42 +83,6 @@ export const QuizQuestion = ({
               ))}
             </div>
 
-            {showEmailCapture && selectedOption === "yes" && (
-              <div className="space-y-4 p-6 bg-secondary/50 rounded-xl border border-border animate-slide-up">
-                <p className="text-sm text-muted-foreground">
-                  Deixe seu e-mail para receber o plano completo e um bônus com 3 receitas fáceis.
-                </p>
-                <div className="space-y-3">
-                  <div>
-                    <Label htmlFor="name">Nome (opcional)</Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      placeholder="Seu nome"
-                      value={emailData?.name || ""}
-                      onChange={(e) =>
-                        onEmailDataChange?.({ ...emailData, name: e.target.value })
-                      }
-                      className="mt-1"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">E-mail (opcional)</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="seu@email.com"
-                      value={emailData?.email || ""}
-                      onChange={(e) =>
-                        onEmailDataChange?.({ ...emailData, email: e.target.value })
-                      }
-                      className="mt-1"
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
-
             <div className="flex gap-4 pt-4">
               <Button
                 variant="outline"
@@ -155,7 +95,7 @@ export const QuizQuestion = ({
               </Button>
               <Button
                 variant="cta"
-                onClick={showEmailCapture ? handleEmailSubmit : handleNext}
+                onClick={handleNext}
                 disabled={!selectedOption}
                 className="flex-1"
               >

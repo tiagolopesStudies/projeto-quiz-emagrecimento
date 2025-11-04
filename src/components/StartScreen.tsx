@@ -21,13 +21,13 @@ export const StartScreen = ({ onStart }: StartScreenProps) => {
           
           <div className="p-8 md:p-12 text-center space-y-6">
             <h1 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
-              Desafio Corpo Definido em 18 Dias
+              Desafio Corpo Definido em 25 Dias
             </h1>
             <p className="text-xl md:text-2xl text-primary font-semibold">
               Descubra seu Plano Personalizado
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Faça uma avaliação gratuita e descubra como perder até 10kg em 21 dias acelerando o seu metabolismo e queimando gordura de forma contínua — sem dietas malucas!
+              Faça uma avaliação gratuita e descubra como perder até 10kg em 25 dias acelerando o seu metabolismo e queimando gordura de forma contínua — sem dietas malucas!
             </p>
             
             <div className="flex items-center justify-center gap-2 text-muted-foreground">

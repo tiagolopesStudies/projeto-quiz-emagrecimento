@@ -27,14 +27,14 @@ export default function SalesPage() {
         <div className="bg-gradient-to-b from-background to-secondary/20 pt-16 pb-4 px-4">
           <div className="max-w-4xl mx-auto text-center space-y-4">
             <h1 className="text-3xl md:text-5xl font-bold text-foreground">
-              Seu plano Corpo Definido em 18 Dias está pronto!{" "}
+              Seu plano Corpo Definido em 25 Dias está pronto!{" "}
               <span className="inline-flex items-center">
                 💪
                 <CheckCircle2 className="w-8 h-8 ml-2 text-primary animate-scale-in" />
               </span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Com base no seu perfil, você terá todas as ferramentas para secar a barriga em 18 dias, 
+              Com base no seu perfil, você terá todas as ferramentas para secar a barriga em 25 dias, 
               sem dietas extremas e treinando apenas 30 minutos por dia!
             </p>
             <Separator className="max-w-xs mx-auto mt-8" />
@@ -65,7 +65,7 @@ export default function SalesPage() {
               </div>
             </div>
             <p className="text-sm text-muted-foreground text-center mt-8">
-              Transformações reais de pessoas que seguiram o método Corpo Definido em 18 Dias.
+              Transformações reais de pessoas que seguiram o método Corpo Definido em 25 Dias.
             </p>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function SalesPage() {
             </h2>
             <div className="space-y-4">
               {[
-                "Plano de treinos prático de 18 dias",
+                "Plano de treinos prático de 25 dias",
                 "Guia nutricional simples e sem dietas malucas",
                 "Acesso a vídeos exclusivos de treino",
                 "Checklist de progresso semanal",
@@ -116,7 +116,7 @@ export default function SalesPage() {
         </div>
 
         {/* Bloco 5 - Preço e Oferta */}
-        <div className="py-16 px-4">
+        <div className="pt-16 px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <div className="flex items-center justify-center gap-2">
               <Clock className="w-6 h-6 text-primary" />

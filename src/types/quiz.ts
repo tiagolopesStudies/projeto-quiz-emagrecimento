@@ -154,7 +154,7 @@ export const QUIZ_QUESTIONS: Question[] = [
   {
     id: 12,
     key: "email_opt_in",
-    question: "Você está verdadeiramente comprometido(a) a seguir o plano pelos próximos 21 dias para alcançar a transformação que sempre sonhou?",
+    question: "Você está verdadeiramente comprometido(a) a seguir o plano pelos próximos 25 dias para alcançar a transformação que sempre sonhou?",
     options: [
       { value: "yes_1", label: "SIM, ESTOU COMPROMETIDO(A)!" },
       { value: "yes_2", label: "ABSOLUTAMENTE, VOU DAR O MEU MELHOR!" },

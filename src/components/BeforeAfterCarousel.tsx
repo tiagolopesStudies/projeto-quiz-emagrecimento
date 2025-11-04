@@ -5,10 +5,10 @@ import transformation3 from "@/assets/transformation-3.jpg";
 import transformation4 from "@/assets/transformation-4.jpg";
 
 const transformations = [
-  { image: transformation1, text: "Perda média: 8 kg em 18 dias — resultado individual." },
-  { image: transformation2, text: "Perda média: 6.5 kg em 18 dias — resultado individual." },
-  { image: transformation3, text: "Perda média: 9 kg em 18 dias — resultado individual." },
-  { image: transformation4, text: "Perda média: 7.2 kg em 18 dias — resultado individual." },
+  { image: transformation1, text: "Perda média: 8 kg em 25 dias — resultado individual." },
+  { image: transformation2, text: "Perda média: 6.5 kg em 25 dias — resultado individual." },
+  { image: transformation3, text: "Perda média: 9 kg em 25 dias — resultado individual." },
+  { image: transformation4, text: "Perda média: 7.2 kg em 25 dias — resultado individual." },
 ];
 
 export const BeforeAfterCarousel = () => {

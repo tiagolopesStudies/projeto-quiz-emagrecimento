@@ -59,7 +59,6 @@ const Index = () => {
 
   if (screen === "quiz") {
     const question = QUIZ_QUESTIONS[currentQuestion];
-    const isLastQuestion = currentQuestion === QUIZ_QUESTIONS.length - 1;
 
     return (
       <>
@@ -72,7 +71,6 @@ const Index = () => {
           currentAnswer={answers[question.key] as string}
           currentStep={currentQuestion + 1}
           totalSteps={QUIZ_QUESTIONS.length}
-          showEmailCapture={isLastQuestion}
           emailData={emailData}
           onEmailDataChange={setEmailData}
         />
