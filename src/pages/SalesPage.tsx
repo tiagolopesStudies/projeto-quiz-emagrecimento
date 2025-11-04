@@ -6,6 +6,17 @@ import transformationBefore from "@/assets/mulher_homem_antes.png";
 import transformationAfter from "@/assets/mulher_homem_depois.png";
 import seloGarantia from '@/assets/selo-garantia.png';
 import { ThemeToggle } from "@/components/ThemeToggle";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import transformation1 from "@/assets/transformation-1.webp";
+import transformation2 from "@/assets/transformation-2.png";
+import transformation3 from "@/assets/transformation-3.jpg";
+import transformation4 from "@/assets/transformation-4.jpg";
 
 export default function SalesPage() {
   return (
@@ -150,29 +161,32 @@ export default function SalesPage() {
             <h2 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-12">
               O que os participantes dizem
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  text: "Perdi 7kg em 18 dias e voltei a usar minhas roupas antigas!",
-                  name: "Mariana, 32 anos"
-                },
-                {
-                  text: "Treinos rápidos, práticos e resultados reais.",
-                  name: "André, 41 anos"
-                },
-                {
-                  text: "Finalmente algo que funciona sem dieta maluca!",
-                  name: "Juliana, 29 anos"
-                }
-              ].map((testimonial, index) => (
-                <Card key={index} className="p-6 space-y-4 shadow-card">
-                  <p className="text-foreground italic">"{testimonial.text}"</p>
-                  <p className="text-sm text-muted-foreground font-semibold">
-                    — {testimonial.name}
-                  </p>
-                </Card>
-              ))}
-            </div>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {[transformation1, transformation2, transformation3, transformation4].map((img, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/3">
+                    <div className="p-1">
+                      <Card className="overflow-hidden shadow-card">
+                        <img
+                          src={img}
+                          alt={`Depoimento ${index + 1}`}
+                          className="w-full h-80 object-cover"
+                          draggable="false"
+                        />
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
           </div>
         </div>
 
