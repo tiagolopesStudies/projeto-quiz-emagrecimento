@@ -80,9 +80,8 @@ export default function SalesPage() {
               {[
                 "Plano de treinos prático de 25 dias",
                 "Guia nutricional simples e sem dietas malucas",
-                "Acesso a vídeos exclusivos de treino",
-                "Checklist de progresso semanal",
-                "Suporte motivacional e acompanhamento online"
+                "Acesso a vídeos dos exercícios",
+                "Guia de suplementação",
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
@@ -91,7 +90,7 @@ export default function SalesPage() {
               ))}
             </div>
             <p className="text-center text-lg text-primary font-semibold mt-12">
-              Tudo o que você precisa para transformar seu corpo e sua mente em menos de 3 semanas!
+              Tudo o que você precisa para transformar seu corpo e sua mente em menos de 4 semanas!
             </p>
           </div>
         </div>
