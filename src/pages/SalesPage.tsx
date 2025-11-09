@@ -6,17 +6,7 @@ import transformationBefore from "@/assets/mulher_homem_antes.png";
 import transformationAfter from "@/assets/mulher_homem_depois.png";
 import seloGarantia from '@/assets/selo-garantia.png';
 import { ThemeToggle } from "@/components/ThemeToggle";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import transformation1 from "@/assets/transformation-1.webp";
-import transformation2 from "@/assets/transformation-2.png";
-import transformation3 from "@/assets/transformation-3.jpg";
-import transformation4 from "@/assets/transformation-4.jpg";
+import video from '@/assets/videos/depoimento.mp4';
 
 export default function SalesPage() {
   return (
@@ -140,14 +130,15 @@ export default function SalesPage() {
         {/* Bloco 6 - Botão de Compra */}
         <div className="py-8 px-4">
           <div className="max-w-2xl mx-auto text-center space-y-4">
-            <Button
-              variant="cta"
-              size="xl"
-              className="w-full sm:w-auto text-base md:text-lg px-8 md:px-12 py-6 uppercase font-bold hover-scale"
-              onClick={() => console.log("Compra iniciada")}
-            >
-              Participar do Desafio Agora!
-            </Button>
+            <a href="https://compraseguraonline.org.ua/c/a0629473d5">
+              <Button
+                variant="cta"
+                size="xl"
+                className="w-full sm:w-auto text-base md:text-lg px-8 md:px-12 py-6 uppercase font-bold hover-scale"
+              >
+                Participar do Desafio Agora!
+              </Button>
+            </a>
             <p className="text-sm text-muted-foreground">
               Oferta por tempo limitado. Garanta o preço promocional antes que acabe!
             </p>
@@ -160,32 +151,11 @@ export default function SalesPage() {
             <h2 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-12">
               O que os participantes dizem
             </h2>
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {[transformation1, transformation2, transformation3, transformation4].map((img, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/3">
-                    <div className="p-1">
-                      <Card className="overflow-hidden shadow-card">
-                        <img
-                          src={img}
-                          alt={`Depoimento ${index + 1}`}
-                          className="w-full h-80 object-cover"
-                          draggable="false"
-                        />
-                      </Card>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-2" />
-              <CarouselNext className="right-2" />
-            </Carousel>
+
+            <video width="288" height="384" controls loop className="mx-auto rounded-md">
+              <source src={video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
 
