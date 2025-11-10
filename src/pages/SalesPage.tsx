@@ -1,14 +1,67 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2, Clock, ShoppingCart } from "lucide-react";
 import transformationBefore from "@/assets/mulher_homem_antes.png";
 import transformationAfter from "@/assets/mulher_homem_depois.png";
 import seloGarantia from '@/assets/selo-garantia.png';
 import { ThemeToggle } from "@/components/ThemeToggle";
 import video from '@/assets/videos/depoimento.mp4';
+import { useEffect, useRef } from "react";
+import { toast } from "@/hooks/use-toast";
+
+const BUYER_NAMES = [
+  "Maria Silva",
+  "João Santos",
+  "Ana Costa",
+  "Pedro Oliveira",
+  "Carla Souza",
+  "Lucas Ferreira",
+  "Juliana Lima",
+  "Rafael Alves",
+  "Fernanda Rocha",
+  "Bruno Martins",
+  "Camila Ribeiro",
+  "Diego Pereira",
+  "Patrícia Gomes",
+  "Thiago Cardoso",
+  "Beatriz Araújo"
+];
+
+const getRandomInterval = () => Math.floor(Math.random() * 6000) + 4000; // 4-10 segundos
+
+const getRandomName = (previousName: string) => {
+  const availableNames = BUYER_NAMES.filter(name => name !== previousName);
+  return availableNames[Math.floor(Math.random() * availableNames.length)];
+};
 
 export default function SalesPage() {
+  const lastNameRef = useRef<string>("");
+
+  useEffect(() => {
+    const showPurchaseToast = () => {
+      const name = getRandomName(lastNameRef.current);
+      lastNameRef.current = name;
+      
+      toast({
+        title: "🎉 Compra realizada!",
+        description: `${name} acabou de adquirir o Corpo Definido em 25 Dias!`,
+        duration: 5000,
+      });
+    };
+
+    const scheduleNextToast = () => {
+      const interval = getRandomInterval();
+      return setTimeout(() => {
+        showPurchaseToast();
+        scheduleNextToast();
+      }, interval);
+    };
+
+    const timeoutId = scheduleNextToast();
+
+    return () => clearTimeout(timeoutId);
+  }, []);
   return (
     <>
       <ThemeToggle />
